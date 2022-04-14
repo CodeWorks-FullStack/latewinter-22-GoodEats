@@ -5,7 +5,7 @@
       @click="login"
       v-if="!user.isAuthenticated"
     >
-      Login
+      Wicky wikcy wild
     </button>
 
     <div class="dropdown my-2 my-lg-0" v-else>
@@ -31,7 +31,7 @@
       >
         <router-link :to="{ name: 'Account' }">
           <div class="list-group-item list-group-item-action hoverable">
-            Manage Account
+            Manage Will
           </div>
         </router-link>
         <div
@@ -39,7 +39,7 @@
           @click="logout"
         >
           <i class="mdi mdi-logout"></i>
-          logout
+          Wicky wicky woo
         </div>
       </div>
     </div>
