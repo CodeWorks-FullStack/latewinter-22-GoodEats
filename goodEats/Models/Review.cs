@@ -14,6 +14,8 @@ namespace goodEats.Models
 
     public Profile? Creator { get; set; }
 
+    public float AverageRating { get; set; }
+
     public DateTime CreatedAt { get; set; }
     public DateTime UpdatedAt { get; set; }
   }

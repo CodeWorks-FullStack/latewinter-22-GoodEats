@@ -19,8 +19,13 @@ namespace goodEats.Repositories
     internal List<Restaurant> GetAll()
     {
       string sql = @"
-        SELECT * FROM restaurants;
-      ";
+      SELECT
+        rs.*,
+      AVG(rv.rating) AS AverageRating,
+      COUNT(rv.id) AS TotalReviews
+      FROM restaurants rs
+      LEFT JOIN reviews rv on rv.restaurantId = rs.id AND rv.published = 1
+      GROUP BY rs.id;";
       return _db.Query<Restaurant>(sql).ToList();
       //   NOTE remember to invoke to List       ^
     }
@@ -28,8 +33,13 @@ namespace goodEats.Repositories
     internal Restaurant GetById(int id)
     {
       string sql = @"
-      SELECT * FROM restaurants WHERE id = @id;
-      ";
+      SELECT
+        rs.*,
+      AVG(rv.rating) AS AverageRating,
+      COUNT(rv.id) AS TotalReviews
+      FROM restaurants rs
+      JOIN reviews rv on rv.restaurantId = rs.id
+      WHERE rs.id = @id;";
       return _db.Query<Restaurant>(sql, new { id }).FirstOrDefault();
       //   NOTE remember to invoke to FirstOrDefault              ^
     }

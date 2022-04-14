@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using goodEats.Models;
 using goodEats.Repositories;
@@ -17,12 +16,13 @@ namespace goodEats.Services
 
     internal Review Create(Review data)
     {
-      throw new NotImplementedException();
+      return _repo.Create(data);
     }
 
-    internal ActionResult<string> Remove(int id1, string id2)
+    internal ActionResult<string> Remove(int id, string userId)
     {
-      throw new NotImplementedException();
+
+      return _repo.Remove(id);
     }
 
     internal List<Review> GetProfileReviews(string profileId)

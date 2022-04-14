@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -28,6 +29,33 @@ namespace goodEats.Repositories
       ";
       return _db.Query<Review>(sql, new { profileId }).ToList();
     }
+
+    internal Review Create(Review data)
+    {
+      string sql = @"
+      INSERT INTO reviews
+      (body, rating, restaurantId, creatorId, published)
+      VALUES
+      (@Body, @Rating, @Restaurant, @CreatorId, @published);
+      SELECT LAST_INSERT_ID();
+      ";
+      int id = _db.ExecuteScalar<int>(sql, data);
+      data.Id = id;
+      return data;
+    }
+    internal string Remove(int id)
+    {
+      string sql = @"
+      DELETE FROM reviews WHERE id = @id LIMIT 1;
+      ";
+      int rows = _db.Execute(sql, new { id });
+      if (rows > 0)
+      {
+        return "review Deleted";
+      }
+      throw new Exception("problemo with sql, no rows affected");
+    }
+
 
     // NOTE alternate way for the exact same method that always includes the Creator
     // internal List<Review> GetProfileReviews(string profileId)
