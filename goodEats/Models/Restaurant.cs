@@ -8,5 +8,6 @@ namespace goodEats.Models
     public string Category { get; set; }
     public string Picture { get; set; }
     public string CreatorId { get; set; }
+    public float AverageRating { get; set; }
   }
 }
