@@ -36,7 +36,7 @@ namespace goodEats.Repositories
       INSERT INTO reviews
       (body, rating, restaurantId, creatorId, published)
       VALUES
-      (@Body, @Rating, @Restaurant, @CreatorId, @published);
+      (@Body, @Rating, @RestaurantId, @CreatorId, @published);
       SELECT LAST_INSERT_ID();
       ";
       int id = _db.ExecuteScalar<int>(sql, data);

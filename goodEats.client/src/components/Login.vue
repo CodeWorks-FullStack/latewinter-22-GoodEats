@@ -1,11 +1,11 @@
 <template>
   <span class="navbar-text">
     <button
-      class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0"
+      class="btn selectable text-dark lighten-30 text-uppercase my-2 my-lg-0"
       @click="login"
       v-if="!user.isAuthenticated"
     >
-      Wicky wikcy wild
+      Login
     </button>
 
     <div class="dropdown my-2 my-lg-0" v-else>
@@ -22,7 +22,7 @@
             height="40"
             class="rounded"
           />
-          <span class="mx-3 text-success lighten-30">{{ account.name }}</span>
+          <span class="mx-3 text-dark lighten-30">{{ account.name }}</span>
         </div>
       </div>
       <div
@@ -31,7 +31,7 @@
       >
         <router-link :to="{ name: 'Account' }">
           <div class="list-group-item list-group-item-action hoverable">
-            Manage Will
+            Manage Account
           </div>
         </router-link>
         <div
@@ -39,7 +39,7 @@
           @click="logout"
         >
           <i class="mdi mdi-logout"></i>
-          Wicky wicky woo
+          Logout
         </div>
       </div>
     </div>
@@ -48,21 +48,21 @@
 
 
 <script>
-import { computed } from "@vue/reactivity";
-import { AppState } from "../AppState";
-import { AuthService } from "../services/AuthService";
+import { computed } from "@vue/reactivity"
+import { AppState } from "../AppState"
+import { AuthService } from "../services/AuthService"
 export default {
   setup() {
     return {
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
       async login() {
-        AuthService.loginWithPopup();
+        AuthService.loginWithPopup()
       },
       async logout() {
-        AuthService.logout({ returnTo: window.location.origin });
+        AuthService.logout({ returnTo: window.location.origin })
       },
-    };
+    }
   },
 };
 </script>

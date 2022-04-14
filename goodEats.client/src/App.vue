@@ -4,6 +4,7 @@
   </header>
   <main>
     <router-view />
+    <RestaurantDetailsModal />
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
@@ -26,5 +27,4 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
 </style>
