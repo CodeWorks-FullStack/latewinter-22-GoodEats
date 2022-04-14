@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-
 namespace goodEats.Models
 {
-    public class Account
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Picture { get; set; }
-    }
+  // NOTE REMEMBER account inherits the profile cause the account has extra information
+  public class Account : Profile
+  {
+    public string Email { get; set; }
+  }
 }

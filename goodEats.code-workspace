@@ -1,4 +1,3 @@
-
 {
   "folders": [
     {
@@ -8,7 +7,11 @@
     {
       "path": "goodEats",
       "name": "server"
-    },{"path":".github/workflows", "name":"workflows"}
+    },
+    {
+      "path": ".github/workflows",
+      "name": "workflows"
+    }
   ],
   "settings": {
     "editor.suggestSelection": "first",
@@ -35,6 +38,26 @@
     "eslint.codeActionsOnSave.mode": "all",
     "editor.codeActionsOnSave": {
       "source.fixAll": true
-    }
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#9faca0",
+      "activityBar.activeBorder": "#6058c7",
+      "activityBar.background": "#9faca0",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#6058c7",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "sash.hoverBorder": "#9faca0",
+      "statusBar.background": "#849485",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#6b7a6c",
+      "statusBarItem.remoteBackground": "#849485",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#849485",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#84948599",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#849485"
   }
 }
